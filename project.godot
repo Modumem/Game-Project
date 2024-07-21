@@ -11,4 +11,5 @@ config_version=5
 [application]
 
 config/name="Project Demo"
+run/main_scene="res://Menu/menu.tscn"
 config/features=PackedStringArray("4.2")

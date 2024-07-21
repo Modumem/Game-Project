@@ -1,7 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cibmxep6sxgtj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pbxnm"]
-load_path = "res://.godot/imported/Map.png-e93ad0cf15fdfe0a9cdf57e1daeb24da.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtveg"]
 resource_name = "MainMap"
