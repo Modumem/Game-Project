@@ -13,3 +13,8 @@ config_version=5
 config/name="Project Demo"
 run/main_scene="res://Menu/menu.tscn"
 config/features=PackedStringArray("4.2")
+
+[display]
+
+window/size/viewport_width=2304
+window/size/viewport_height=1296
