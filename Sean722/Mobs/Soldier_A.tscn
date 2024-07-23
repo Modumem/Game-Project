@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7pe3m4ukdx0s"]
+
+[ext_resource type="Texture2D" uid="uid://boehoqrurbvwh" path="res://Sean722/Assets/Retina/towerDefense_tile245.png" id="1_xr0ub"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4or0c"]
+
+[node name="Soldier_A" type="CharacterBody2D"]
+
+[node name="TowerDefenseTile245" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+texture = ExtResource("1_xr0ub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4or0c")
+debug_color = Color(0.0213004, 0.597931, 0.708527, 0.42)
