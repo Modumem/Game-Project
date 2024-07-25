@@ -19,6 +19,10 @@ config/features=PackedStringArray("4.2")
 window/size/viewport_width=2304
 window/size/viewport_height=1296
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/jam_launch/editor_plugin/plugin.cfg")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
