@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://s2tgxchek3h0"]
+[gd_scene load_steps=3 format=3 uid="uid://s2tgxchek3h0"]
+
+[ext_resource type="PackedScene" uid="uid://b7pe3m4ukdx0s" path="res://Sean722/Mobs/Soldier_A.tscn" id="1_xvixi"]
 
 [sub_resource type="Curve2D" id="Curve2D_faf0f"]
 _data = {
@@ -14,3 +16,5 @@ curve = SubResource("Curve2D_faf0f")
 position = Vector2(57, 121)
 rotation = 0.00809699
 loop = false
+
+[node name="Soldier_A" parent="PathFollow2D" instance=ExtResource("1_xvixi")]
