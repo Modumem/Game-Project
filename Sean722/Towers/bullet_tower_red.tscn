@@ -64,6 +64,7 @@ corner_radius_bottom_left = 15
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f110v"]
 
 [node name="BulletTower_Red" type="StaticBody2D"]
+scale = Vector2(0.4, 0.520001)
 input_pickable = true
 script = ExtResource("1_ls4jo")
 
@@ -81,6 +82,7 @@ texture = ExtResource("2_v35l4")
 
 [node name="Tower" type="Area2D" parent="."]
 position = Vector2(-2, 1)
+scale = Vector2(3.6, 2.53846)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
 scale = Vector2(0.5, 0.5)

@@ -1941,7 +1941,7 @@ offset_top = 147.0
 offset_right = 1753.0
 offset_bottom = 174.0
 scale = Vector2(4.39489, 2.84825)
-value = 100.0
+value = 10.0
 
 [connection signal="timeout" from="Path2D/PathSpawner/Timer" to="Path2D/PathSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
