@@ -59,3 +59,16 @@ func fire_bullet(target):
 	tempBullet.bulletDamage = BulletDamage
 	get_node("BulletContainer").add_child(tempBullet)
 	tempBullet.global_position = $Aim.global_position
+	
+	
+	
+func _on_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_mask == 1:
+		var towerPath = get_tree().get_root().get_node("Main/Towers")
+		for i in range(towerPath.get_child_count()):
+			if towerPath.get_child(i).name != self.name:
+				towerPath.get_child(i).get_node("Upgrade/Upgrade").hide()
+		var upgrade_node = get_node("Upgrade/Upgrade")
+		upgrade_node.visible = not upgrade_node.visible
+		upgrade_node.global_position = self.position + Vector2(-572, 81)
+			
