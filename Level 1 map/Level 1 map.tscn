@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://4cimjtrb6daq"]
+[gd_scene load_steps=18 format=3 uid="uid://4cimjtrb6daq"]
 
 [ext_resource type="Texture2D" uid="uid://bv5miuydpq8rn" path="res://towerDefense_tilesheet.png" id="1_h13sf"]
 [ext_resource type="Texture2D" uid="uid://c4jpbnuqgttbp" path="res://7.png" id="2_03q6m"]
@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bqj0433stne5b" path="res://Sample.png" id="5_fkvfs"]
 [ext_resource type="PackedScene" uid="uid://s2tgxchek3h0" path="res://Sean722/Mobs/Level_1_Path.tscn" id="6_nvg7t"]
 [ext_resource type="Script" path="res://Sean722/Mobs/PathSpawner.gd" id="7_28icd"]
-[ext_resource type="PackedScene" uid="uid://bml62y0sk6dm" path="res://Sean722/Towers/bullet_tower_red.tscn" id="8_8x1k2"]
+[ext_resource type="PackedScene" uid="uid://dxtu1x8o5glx2" path="res://Rafael z/ui.tscn" id="9_y1fia"]
+[ext_resource type="Script" path="res://Level 1 map/Base2D.gd" id="9_yadno"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gb8gb"]
 texture = ExtResource("1_h13sf")
@@ -1900,6 +1901,9 @@ sources/3 = SubResource("TileSetAtlasSource_uf7sx")
 sources/4 = SubResource("TileSetAtlasSource_bs2tv")
 sources/5 = SubResource("TileSetAtlasSource_qyxaq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn7yf"]
+size = Vector2(20, 30.9888)
+
 [node name="Level1Map" type="TileMap"]
 tile_set = SubResource("TileSet_hxnkv")
 rendering_quadrant_size = 64
@@ -1918,13 +1922,26 @@ autostart = true
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="BulletTower_Red" parent="Towers" instance=ExtResource("8_8x1k2")]
-position = Vector2(349, 392)
+[node name="UI" parent="." instance=ExtResource("9_y1fia")]
+offset = Vector2(1150, 450)
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 1150, 450)
 
-[node name="BulletTower_Red2" parent="Towers" instance=ExtResource("8_8x1k2")]
-position = Vector2(1254, 331)
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("9_yadno")
 
-[node name="BulletTower_Red3" parent="Towers" instance=ExtResource("8_8x1k2")]
-position = Vector2(794, 875)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1753, 347.9)
+scale = Vector2(13.12, 10.72)
+shape = SubResource("RectangleShape2D_vn7yf")
+
+[node name="ProgressBar" type="ProgressBar" parent="Area2D"]
+offset_left = 1749.0
+offset_top = 147.0
+offset_right = 1753.0
+offset_bottom = 174.0
+scale = Vector2(4.39489, 2.84825)
+value = 100.0
 
 [connection signal="timeout" from="Path2D/PathSpawner/Timer" to="Path2D/PathSpawner" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
