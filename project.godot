@@ -14,6 +14,10 @@ config/name="Project Demo"
 run/main_scene="res://Menu/menu.tscn"
 config/features=PackedStringArray("4.2")
 
+[autoload]
+
+Game="*res://Global/Game.gd"
+
 [display]
 
 window/size/viewport_width=2304

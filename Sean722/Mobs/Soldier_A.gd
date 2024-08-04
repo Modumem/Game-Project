@@ -8,13 +8,16 @@ func _process(delta):
 	if get_parent().get_progress_ratio() == 1:
 		queue_free()  # Remove the soldier if at the end of the path
 	if Health <= 0:
-		queue_free()  # Remove the soldier if health drops to 0
+		die()  # Call the die function
 
 func take_damage(amount: int):
 	Health -= amount
 	if Health <= 0:
-		queue_free()  # Remove the soldier if health drops to 0
+		die()  # Call the die function
 
-func _ready():
-	# Ensure this sprite appears on top of the map
-	self.z_index = 1
+func die():
+	var game = get_tree().get_root().get_node("/root/Game")
+	if game:
+		game.add_gold(5)  # Directly call the add_gold method
+	print("Soldier died, gold added.")
+	queue_free()  # Remove the soldier

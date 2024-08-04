@@ -72,3 +72,6 @@ func _on_input_event(viewport, event, shape_idx):
 		upgrade_node.visible = not upgrade_node.visible
 		upgrade_node.global_position = self.position + Vector2(-572, 81)
 			
+func _ready():
+	
+	self.z_index = 1
